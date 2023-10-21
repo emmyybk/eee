@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/eee/asset/image/favicon (2).ico" type="image/x-icon" />
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      background-color: black;
+      height: 7px;
+      width: 50px;
+      margin: 10px;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      transform: translate(0, 15px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      transform: translate(0, -17px) rotate(45deg);
+    }
+
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid coral;
+      width: 80px;
+      height: 80px;
+      -webkit-animation: spin 0.1s linear infinite;
+      /* Safari */
+      animation: spin 2s linear infinite;
+    }
+
+    #bd {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 150px;
+    }
+
+    #bd .change {
+      display: none;
+    }
+
+    p {
+      margin-top: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      transition: ease-in-out 0.3s;
+    }
+
+    .page1,
+    .page2,
+    .page3,
+    .page4,
+    .page5 {
+      margin: 60px;
+      font-size: 50px;
+    }
+
+    a:hover {
+      color: coral;
+      transition: ease-in-out 0.3s;
+    }
+
+    .allpages {
+      display: none;
+    }
+
+    .change .allpages {
+      margin-top: 30px;
+      height: 500px;
+      width: 1350px;
+      text-align: center;
+      display: inline-block;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media screen and (max-width: 414px) {
+      .change .allpages {
+        width: 414px;
+      }
+    }
+  </style>
+  <title>Download</title>
+</head>
+
+<body>
+  <div>
+    <div class="menubar" onclick="menubar(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+  </div>
+  <div id="bd">
+    <div>
+      <div id="loader" class="loader"></div>
+      <p id="pa">Please Wait...</p>
+    </div>
+  </div>
+
+  <div class="displayall" id="displayall">
+    <div id="allpages" class="allpages">
+      <div>
+        <a onclick="pt(this)" class="page1" href="/eee/home.html">Home</a>
+      </div>
+      <div class="page3">
+        <a href="/eee/service.html">Services</a>
+      </div>
+      <div class="page4">
+        <a href="/eee/contact.html">Contact Me</a>
+      </div>
+      <div class="page5"><a href="/eee/download.html">Download Resume</a></div>
+    </div>
+  </div>
+  <script>
+    function menubar(x) {
+      x.classList.toggle("change");
+      document.getElementById("loader").classList.toggle("change");
+      document.getElementById("pa").classList.toggle("change");
+      document.getElementById("displayall").classList.toggle("change");
+    }
+  </script>
+</body>
+
+</html>
