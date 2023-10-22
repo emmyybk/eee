@@ -4,12 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/eee/asset/image/favicon (2).ico"
-      type="image/x-icon" />
+    <link rel="shortcut icon" href="/eee/asset/image/favicon (2).ico" type="image/x-icon" />
     <title>Home</title>
     <style>
-    body {
+      body{
+        margin: 0;
+        padding: 0;
+      }
+    .body {
       background-color: azure;
+      padding: 20px 0px 200px 0px;
     }
 
     #menubar {
@@ -48,7 +52,6 @@
     }
 
     .p1 {
-      /* transform: scale(1.); */
       margin: 80px;
       font-weight: 500;
       font-size: 32px;
@@ -77,11 +80,6 @@
       font-size: 50px;
     }
 
-    /* .page5:hover{
-      padding: 50px;
-      background-color: aliceblue;
-    } */
-
     a:hover {
       color: coral;
       transition: ease-in-out 0.3s;
@@ -98,13 +96,85 @@
       text-align: center;
       display: inline-block;
     }
-@media screen and (max-width:414px) {
-      body{
+    .darkmode{
+      width: 80px;
+      height: 40px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-radius: 18px;
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+    .dm1{
+      width: 40px;
+      height: 40px;
+      background-color: blue;
+      color: white;
+      border-top-left-radius: 36%;
+      border-bottom-left-radius: 36%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+    }
+    .dm2{
+      width: 40px;
+      height: 40px;
+      border-top-right-radius: 36%;
+      border-bottom-right-radius: 36%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor:pointer;
+      transition: 0.5s;
+    }
+    .chg  .body{
+      background-color: black;
+      color: white;
+    }
+    .chg  a{
+      color: whitesmoke;
+    }
+    .chg #homedisplay > p > span > a{
+      color: coral;
+    }
+    .chg .darkmode{
+      width: 80px;
+      height: 40px;
+      border: 2px solid black;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .chg .dm1{
+       background-color: white;
+       color: black;
+    }
+    .chg .dm2{
+       background-color: blue;
+    }
+    .chg .bar1{
+        background-color: white;
+        color: white;
+    }
+    .chg .bar2{
+        background-color: white;
+        color: white;
+    }.chg .bar3{
+        background-color: white;
+        color: white;
+    }
+    @media screen and (max-width:414px) {
+      .body{
         margin: 0;
         width: 414px;
       }
       h1{
-        margin-top: 100px;
+        margin-top: 120px;
         margin-bottom: 0;
         text-align: center;
         font-size: 30px;
@@ -118,22 +188,29 @@
         padding: 30px;
         font-size: 25px;
       }
-     
-      }
-      .change .allpages {
+         .change .allpages {
        width: 414px;
       }
 
+     
+      }
+   
    
   </style>
   </head>
 
-  <body>
+  <body id="b">
+    <div class="body">
     <div>
     <div id="menubar" onclick="menubar(this)">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
+    </div>
+    <div class="darkmode">
+
+      <div onclick="darkoff(this)" id="dm1" class="dm1">OFF</div>
+      <div onclick="dark(this)" id="dm2" class="dm2">ON</div>
     </div>
     <div>
       <div id="home" class="home">
@@ -164,19 +241,25 @@
           <a href="/eee/contact.html">Contact Me</a>
         </div>
         <div class="page5">
-          <a href="/eee/download">Download Resume</a>
+          <a href="/eee/download.html">Download Resume</a>
         </div>
       </div>
     </div>
-
     <script>
     function menubar(x) {
       x.classList.toggle("change");
       document.getElementById("homedisplay").classList.toggle("change");
       document.getElementById("displayall").classList.toggle("change");
+ 
+    
+    }
+    function dark(y){
+      y.classList.add("chg");
+      document.getElementById("b").classList.add("chg")
     }
   </script>
   </div>
+</div>
   </body>
 
 </html>
