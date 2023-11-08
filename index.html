@@ -96,41 +96,7 @@
       text-align: center;
       display: inline-block;
     }
-    .darkmode{
-      width: 80px;
-      height: 40px;
-      border: 2px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      border-radius: 18px;
-      margin-left: 20px;
-      margin-top: 10px;
-    }
-    .dm1{
-      width: 40px;
-      height: 40px;
-      background-color: blue;
-      color: white;
-      border-top-left-radius: 36%;
-      border-bottom-left-radius: 36%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.5s;
-    }
-    .dm2{
-      width: 40px;
-      height: 40px;
-      border-top-right-radius: 36%;
-      border-bottom-right-radius: 36%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor:pointer;
-      transition: 0.5s;
-    }
+   
     .chg  .body{
       background-color: black;
       color: white;
@@ -141,22 +107,42 @@
     .chg #homedisplay > p > span > a{
       color: coral;
     }
-    .chg .darkmode{
-      width: 80px;
-      height: 40px;
-      border: 2px solid black;
-      background-color: white;
+    .darkmode {
+      background-color: black;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 20px 0px 0px 50px;
+      width: 20px;
+      height: 20px;
+      padding: 3px;
+      border-radius:5em;
     }
+    .dm1{
+      width: 15px;
+      height: 20px;
+      background-color: white;
+      border-top-left-radius: 5em;
+      border-bottom-left-radius: 5em;
+    }
+    .dm2{
+      width: 15px;
+      height: 20px;
+      background-color: black;
+      border-top-right-radius: 5em;
+      border-bottom-right-radius: 5em;
+    }
+    .chg .darkmode{
+      background-color: white;
+    } 
     .chg .dm1{
-       background-color: white;
-       color: black;
+      background-color: black;
     }
     .chg .dm2{
-       background-color: blue;
+      background-color: white;
     }
+    .dmshadow:hover{
+       background-color: gre;
+    }
+    
     .chg .bar1{
         background-color: white;
         color: white;
@@ -207,11 +193,13 @@
       <div class="bar2"></div>
       <div class="bar3"></div>
     </div>
-    <div class="darkmode">
+    <div class="dmshadow">
+        <div onclick="dark(this)" id="darkmode" class="darkmode">
 
-      <div id="dm1" class="dm1">OFF</div>
-      <div onclick="dark(this)" id="dm2" class="dm2">ON</div>
-    </div>
+          <div  id="dm1" class="dm1"></div>
+          <div  id="dm2" class="dm2"></i></div>
+        </div>
+      </div>
     <div>
       <div id="home" class="home">
         <div id="homedisplay">
@@ -255,7 +243,7 @@
     }
        function dark(y){
       y.classList.toggle("chg");
-      document.getElementById("b").classList.toggle("chg")
+      document.getElementById("b").classList.toggle("chg");
     }
   </script>
   </div>
